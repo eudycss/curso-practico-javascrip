@@ -1,9 +1,5 @@
 console.group("Cuadrado");
 
-// const ladoCuadrado = 5;
-// console.log('Los lados del cuadrado miden: '+ladoCuadrado+"cm");
-
-
 function perimetroCuadrado(lado){
      return lado*4;  
 } 
@@ -20,27 +16,14 @@ console.groupEnd();
 
 //Código triangulo
 console.group("Triangulo");
-// const ladoTriangulo1=6
-// const ladoTriangulo2=6
-// const baseTriangulo=4
-
-// console.log(
-//     "Los lados del trinagulo miden: "+ladoTriangulo1+"cm, "
-//     +ladoTriangulo2+"cm, "
-//     +baseTriangulo+"cm");
-// const alturaTriangulo=5.5
-// console.log("La altura del triangulo es: "+alturaTriangulo+"cm");
 function perimetroTriangulo(lado1, lado2, base){
     return lado1+lado2+base;
 }
 
-// const perimetroTriangulo =ladoTriangulo1+ladoTriangulo2+baseTriangulo;
-// console.log("El perimetro del triangulo es :"+perimetroTriangulo+"cm");
+
 function areaTriangulo(base, altura){
     return (base * altura)/2
 }
-// const areaTriangulo=(baseTriangulo*alturaTriangulo)/2
-// console.log("El area del triángulo es: "+areaTriangulo+"cm2");
 console.groupEnd()
 
 
@@ -77,3 +60,63 @@ function areaCirculo(radio){
 // console.log("El área del circulo es: "+areaCirculo+"cm2 ");
 
 console.groupEnd()
+
+/* Aquí interactuamos con el Html */
+function calcularPerimetroCuadrado(){
+    const input=document.getElementById("InputCuadrado");
+    const value = input.value;
+    const perimetro = perimetroCuadrado(value);
+    alert(perimetro);
+}
+
+function calcularAreaCuadrado(){
+    const input=document.getElementById("InputCuadrado")
+    const value = input.value;
+    const area = areaCuadrado(value);
+    alert(area)
+}
+
+function calcularPerimetroTriangulo(){
+    const input=document.getElementById("Inputlado1");
+    const input1=document.getElementById("Inputlado2");
+    const input2=document.getElementById("Inputbase");
+    const value0 = Number(input.value);
+    const value1 = Number(input1.value);
+    const value2 = Number(input2.value);
+
+    const perimetrot = perimetroTriangulo(value0, value1, value2);
+    alert(perimetrot);
+}
+
+function calcularAreaTriangulo(){
+
+    const input=document.getElementById("Inputlado1")
+    const input1=document.getElementById("Inputbase")
+    const value = input.value;
+    const value1 = input1.value;
+    const area = areaTriangulo(value, value1)
+    alert("El area es "+area)
+}
+
+function comprobarIfIsoceles(lado1, lado2){
+    if(lado1===lado2){
+        return true;
+     }
+
+
+}
+function calcularAltura(){
+ 
+    const input=document.getElementById("inputlado1");
+    const input1=document.getElementById("inputlado2");
+    const input2=document.getElementById("inputbase");
+    const lad1 = Number(input.value);
+    const lad2 = Number(input1.value);
+    const bas = Number(input2.value);
+    if(comprobarIfIsoceles(lad1,lad2)){
+     const altura=Math.sqrt((lad1*lad1)-(bas*bas)/4)
+     alert("La altuta es: "+altura)
+ }else{
+     alert("El lado 1 y 2 deben ser iguales")
+ }
+}

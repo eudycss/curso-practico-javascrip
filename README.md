@@ -1,4 +1,4 @@
-# curso-practico-javascrip
+# curso-practico-javascript
 ...
 
 ## Taller #1: figuras geometrícas

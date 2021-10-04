@@ -8,10 +8,13 @@ function calcularPrecioConDescuento(precio,descuento){
     return precioConDescuento
 
 }
-// console.log("El precio original es: "+precioOriginal);
-// console.log({
-//     precioOriginal,
-//     descuento,
-//     porcentajePrecioConDescuento,
-//     precioConDescuento
-// });
+function onClickButtonPriceDiscount(){
+const inputPrice = document.getElementById("InputPrice")
+const priceValue=inputPrice.value
+const inputDiscount = document.getElementById("InputDiscount")
+const discountValue=inputDiscount.value
+
+const precioConDescuento= calcularPrecioConDescuento(priceValue, discountValue)
+const resultP1=document.getElementById("resultP")
+resultP1.innerText="El precio con descuento son: $"+precioConDescuento;
+}

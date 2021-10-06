@@ -5,10 +5,11 @@ function calcularMediaArimetica(lista) {
       function(valorAcumulado=0, nuevoElemento){
           return valorAcumulado+nuevoElemento;
       }
-  )
+  );
     const promedioLista = sumaLista  / lista.length;
     return promedioLista
   }
+  
   function comparar(a, b) {
     return a - b;
   }
